@@ -1,0 +1,24 @@
+<h1>Longest Word Game</h1>
+
+<h3>Here are your letters</h3>
+<div class="letters">
+  <ul class="list-inline">
+    <% @letters.each do |letter| %>
+
+      <li><%= letter %></li>
+
+
+      <% end %>
+  </ul>
+</div>
+
+<% time = Time.now.strftime('%s') %>
+
+<form action="/score" method="post" class="form-inline">
+  <input type="text" name="word" class="form-control input-lg">
+  <input name="letters" type="hidden" value=<%= @letters.join %> >
+  <input name="start_time" type="hidden" value=<%= time %> >
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="submit" method="post" class="form-control input-lg btn btn-primary" value="Send">
+</form>
+

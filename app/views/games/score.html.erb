@@ -1,0 +1,10 @@
+<h1>Longest Word Game</h1>
+
+<h3>Results</h3>
+
+<h4><%= @message %></h4>
+<h4>Time to answer: <%= @time / 60 %> minutes <%= @time % 60 %> seconds</h4>
+<h4>Your score: <%= @score %></h4>
+
+
+<%= link_to "Play Again?", "/new", class: "form-control btn btn-primary" %>
